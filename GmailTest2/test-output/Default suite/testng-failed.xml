@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.learnAutomation.testCase.LoginTestCRM">
+        <methods>
+          <include name="mailCount"/>
+          <include name="configBeforeMtd"/>
+          <include name="configBeforeClass"/>
+          <include name="configAfterMtd"/>
+        </methods>
+      </class> <!-- com.learnAutomation.testCase.LoginTestCRM -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
