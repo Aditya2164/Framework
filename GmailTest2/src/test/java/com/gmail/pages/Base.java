@@ -41,6 +41,7 @@ public ExtentTest logger;
 
 	
 	@BeforeClass
+	//Load 
 	public void configBeforeClass(){
 	driver = BrowserFactory.startApplication(driver, Constants.browser, Constants.url);
     loginVar = PageFactory.initElements(driver, LoginPage.class);
