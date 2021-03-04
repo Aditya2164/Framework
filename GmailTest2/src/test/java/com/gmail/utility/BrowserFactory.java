@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
@@ -13,14 +14,16 @@ public class BrowserFactory {
 	
 		if(browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-extensions");
+			driver = new ChromeDriver(options);
 		}
 		else if(browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		else {
-			System.out.println("We do not support this browser");
+			System.out.println("We do not support this browser ");
 		}
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

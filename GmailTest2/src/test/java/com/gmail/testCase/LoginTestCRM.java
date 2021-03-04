@@ -10,7 +10,7 @@ public class LoginTestCRM extends Base{
 	//Test if Primary tab selected by default, if not select primary Tab
     @Test 
 	public void loginApp() throws InterruptedException {
-    	
+    System.out.println("Alert 2 Reached TC 1 ");
     logger = report.createTest("Test 1: Gmail Login >> Primary Tab Selected ? >> If Not select Primary Tab");
     logger.info("Start Test");
     String actualSelectedTab = loginVar.selectPrimaryTab();
@@ -24,6 +24,7 @@ public class LoginTestCRM extends Base{
 	}
 //	Assert.assertEquals(actualSelectedTab, expectedSelectedTab,"Primary Tab Not Selected by Default");
 	logger.pass(" Test 1 passed >> Login Success, Primary Tab Selected");
+	System.out.println("Alert 3 TC1 END");
 	
     }
     

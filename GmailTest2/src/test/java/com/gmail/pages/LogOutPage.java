@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LogOutPage {
 		
-     	@FindBy(xpath="//img[@class = \"gb_Ia gbii\"]")
+     	@FindBy(xpath="//img[@class = 'gb_Da gbii']")
 		private WebElement profile;
      	
     	@FindBy(linkText="Sign out")

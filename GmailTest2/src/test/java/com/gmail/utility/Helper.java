@@ -7,6 +7,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -36,5 +40,20 @@ public class Helper {
 		Date currentDate = new Date();
 	return format.format(currentDate);
 	}
+	
+	public static void sendEmail() throws EmailException
+	{
+		Email email = new SimpleEmail();
+		email.setHostName("smtp.googlemail.com");
+		email.setSmtpPort(465);
+		email.setAuthenticator(new DefaultAuthenticator("username", "password"));
+		email.setSSLOnConnect(true);
+		email.setFrom("user@gmail.com");
+		email.setSubject("TestMail");
+		email.setMsg("This is a test mail ... :-)");
+		email.addTo("foo@bar.com");
+		email.send();
+	}
+	
 
 }

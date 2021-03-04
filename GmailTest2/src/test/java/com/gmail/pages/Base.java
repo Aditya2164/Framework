@@ -1,5 +1,4 @@
-	package com.gmail.pages;
-
+package com.gmail.pages;
 import java.io.File;
 import java.io.IOException;
 
@@ -35,11 +34,9 @@ public ExtentTest logger;
    public void setUpSuite(){
 	   ExtentHtmlReporter extent = new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/Reports/Gmail Test Report "+Helper.getCurrentDateTime()+".html"));
 	   report = new ExtentReports();
-	   report.attachReporter(extent);
-	   	   
+	   report.attachReporter(extent);	   	   
    }
 
-	
 	@BeforeClass
 	//Load 
 	public void configBeforeClass(){
@@ -51,13 +48,16 @@ public ExtentTest logger;
 	
 	@BeforeMethod
 	public void configBeforeMtd() throws InterruptedException{
+		System.out.println("Alert 0");
 		String userNAme = Constants.userName;
 		String password = Constants.password;
 		loginVar.login(userNAme, password);
+		System.out.println("Alert 1 login success");
 		}
 	
 	@AfterMethod 
 	public void configAfterMtd(ITestResult result) throws InterruptedException, IOException{
+		System.out.println("After method starts");
 		
 		if(result.getStatus() == ITestResult.FAILURE) {
 			//Helper.CaptureScreenshot(driver);            	
@@ -69,12 +69,17 @@ public ExtentTest logger;
 		else if(result.getStatus() == ITestResult.SKIP) {
 			logger.skip("Screen Print", MediaEntityBuilder.createScreenCaptureFromPath(Helper.CaptureScreenshot(driver)).build());
 		}
+		System.out.println("After method continues");
 	report.flush();
+	System.out.println("After method flush");
 	logOut.logOut();
+System.out.println("after method end");	
+	
 	}
 
 	@AfterClass
 	public void configAfterClass(){
+		System.out.println("Alert 4 quit Browser");
 	driver.quit();
 }
 }

@@ -5,9 +5,10 @@
     <classes>
       <class name="com.gmail.testCase.LoginTestCRM">
         <methods>
+          <include name="loginApp"/>
+          <include name="mailCount"/>
           <include name="sender"/>
-          <include name="configBeforeMtd"/>
-          <include name="configAfterMtd"/>
+          <include name="setUpSuite"/>
           <include name="configBeforeClass"/>
         </methods>
       </class> <!-- com.gmail.testCase.LoginTestCRM -->

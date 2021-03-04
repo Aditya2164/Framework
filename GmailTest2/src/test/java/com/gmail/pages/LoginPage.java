@@ -42,7 +42,7 @@ public class LoginPage {
 //	@CacheLookup
 	WebElement next2;
 	
-	@FindBy(xpath = "//img[@class ='gb_va']")
+	@FindBy(xpath = "//img[@class ='gb_uc']")
 	WebElement gmailLogo;
 	
 	@FindBy(xpath = "//*[@id=\":23\"]")
@@ -57,9 +57,11 @@ public class LoginPage {
 		Thread.sleep(4000);
 		next2.click();
 		Thread.sleep(4000);
+		System.out.println("check 1");
 		boolean img = gmailLogo.isDisplayed();
 		if (img) {
 			System.out.println("Login SUccesful");
+			
 		}
 		
 		else {
